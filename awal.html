@@ -1,0 +1,45 @@
+{% extends "main_layout.html" %}
+{% block content %}
+<p>{{ nilai }}</p>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplikasiku</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+<body>
+    <div>
+        <h5>
+        </h5>
+    </div>
+    <div class="p-3 mb-2 bg-success text-white">
+            <p>SELAMAT DATANG DI WEBSITE</p>
+    </div>
+    <div>
+        <a href="{{ url_for('indexku') }}">Index</a> | <a href="{{ url_for('indexkedua') }}">Indexkedua</a> | <a href="{{ url_for('aboutku') }}">About</a> | <a href="{{ url_for('contactku') }}">Contact</a>
+    </div>
+    <hr>
+    <div>
+        <table border="1">
+            <tr>
+                <th>No</th>
+                <th>Buah</th>
+                <th>Hewan</th>
+            </tr>
+            {% for nomor_kolom, buah, hewan in data["no"] | zip(data["buah"], data["hewan"]) %}
+            <tr>
+                <td>{{ nomor_kolom }}</td>
+                <td>{{ buah }}</td>
+                <td>{{ hewan }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<hr>
+    <div>
+    <a href="{{ url_for('logout') }}">logout</a>
+    </div>
+</body>
+{% endblock %}

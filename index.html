@@ -1,0 +1,70 @@
+{% extends "main_layout.html" %}
+{% block content %}
+
+<html>
+    <head></head>
+    <body>
+        <div>
+            <p>Hello My Flask</p>
+            <p>No one inside</p>
+            <p>Nilai saya adalah : <strong>{{ value }}</strong></p>
+            <br>
+            {% for data in value %}
+                <li>{{ data }}</li>
+            {% endfor %}
+        </div>
+        <div>
+            {% if kegiatan == "tidur" %}
+            <p>Maka saya senang</p>
+            {% elif kegiatan == "bermain" %}
+            <p>Maka saya juga senang</p>
+            {% else %}
+            <p>Maka saya sedih</p>
+            {% endif %}
+        </div>
+        <div>
+            <! –membuat variabel–>
+            {% set dina = "Jum'at berkah" %}
+            <p>{{ dina }}</p>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div>
+            {% for data in value %}
+            {% if data == "senin" %}
+            <p>{{ data }}, Maka saya masuk sekolah</p>
+            {% elif data == "sabtu" %}
+            <p>{{ data }}, Maka saya libur sekolah</p>
+            {% elif data == "januari" %}
+            <p>{{ data }}, januari adalah nama bulan, bukan nama hari</p>
+            {% else %}
+            <p> {{ data }}, tidak masuk kondisi</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <p>=======================================</p>
+        <div>
+            <table border="1">
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email Address</th>
+                </tr>
+                <tr>
+                 <td>Jajang</td>
+                 <td>Nurjaman</td>
+                 <td>jajangnurjaman@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Asep</td>
+                  <td>Setiwan</td>
+                  <td>asepsetiawan@gmail.com</td>
+                </tr>
+              </table>
+        </div>
+    </body>
+</html>
+<br>
+<a href="{{ url_for('awal') }}">balik awal cuy</a>
+{% endblock %}

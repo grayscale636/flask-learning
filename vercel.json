@@ -9,12 +9,23 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "static/$1"
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "app.py"
     },
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/app.py"
     }
   ],
-  "cleanUrls": true
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/app.py"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
 }

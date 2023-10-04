@@ -2,19 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py", // Ubah ini sesuai dengan nama file utama aplikasi Flask Anda
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)", // Menangani file statis seperti CSS, gambar, dll.
-      "dest": "static/$1" // Asumsi folder statis Anda adalah "static"
+      "src": "/static/(.*)",
+      "dest": "static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "app.py" // Ubah ini juga sesuai dengan nama file utama aplikasi Anda
+      "dest": "app.py"
     }
   ],
-  "cleanUrls": true // Menghapus ekstensi .html dari URL
+  "cleanUrls": true
 }

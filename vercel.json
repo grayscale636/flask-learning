@@ -25,5 +25,5 @@
       "source": "/(.*)",
       "destination": "/app.py"
     }
-  ],
+  ]
 }
